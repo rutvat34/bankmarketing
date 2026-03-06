@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}About | Bank Marketing{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <h3>About this App</h3>
+        <p>This demo app shows a small machine-learning workflow for predicting whether a customer will subscribe to a term deposit based on the UCI Bank Marketing dataset.</p>
+        <ul>
+          <li>Form collects customer attributes used by the trained model.</li>
+          <li>The model returns a binary prediction and a probability if available.</li>
+          <li>Accuracy shown on the home page reflects the model's test accuracy (editable in <code>app.py</code>).</li>
+        </ul>
+        <p>Feel free to explore the <a href="{{ url_for('model_info') }}">Model</a> page for details.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

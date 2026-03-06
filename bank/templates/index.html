@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Bank Marketing{% endblock %}
+
+{% block content %}
+<div class="home-container">
+  <div class="home-content">
+    <div class="home-left">
+      <h1 class="home-title">Bank Marketing Prediction</h1>
+      <p class="home-subtitle">Will the customer subscribe to a term deposit?</p>
+      <p class="home-description">Enter customer details below to predict if they will subscribe to a term deposit offer.</p>
+      
+      <div class="model-performance">
+        <h5 class="perf-label">Model Performance</h5>
+        <div class="perf-box">
+          <h2 class="perf-accuracy">{{ accuracy }}%</h2>
+          <p class="perf-text">Logistic Regression Accuracy</p>
+        </div>
+      </div>
+
+      <a href="{{ url_for('predict') }}" class="btn-predict">Get Prediction</a>
+    </div>
+
+    <div class="home-right">
+      <svg class="bank-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Bank building -->
+        <g>
+          <!-- Main building -->
+          <rect x="50" y="80" width="100" height="80" fill="#FFD700" stroke="#FFF" stroke-width="2"/>
+          <!-- Columns -->
+          <rect x="60" y="70" width="8" height="90" fill="#FFFFFF"/>
+          <rect x="96" y="70" width="8" height="90" fill="#FFFFFF"/>
+          <rect x="132" y="70" width="8" height="90" fill="#FFFFFF"/>
+          <!-- Roof -->
+          <polygon points="50,80 100,30 150,80" fill="#0047AB" stroke="#FFF" stroke-width="2"/>
+          <!-- Door -->
+          <rect x="92" y="130" width="16" height="30" fill="#8B4513"/>
+          <!-- Windows -->
+          <rect x="65" y="95" width="12" height="12" fill="#87CEEB"/>
+          <rect x="85" y="95" width="12" height="12" fill="#87CEEB"/>
+          <rect x="105" y="95" width="12" height="12" fill="#87CEEB"/>
+          <rect x="125" y="95" width="12" height="12" fill="#87CEEB"/>
+          <!-- Coins -->
+          <circle cx="70" cy="140" r="8" fill="#FFD700" stroke="#FFF" stroke-width="1"/>
+          <circle cx="85" cy="155" r="8" fill="#FFD700" stroke="#FFF" stroke-width="1"/>
+          <circle cx="100" cy="165" r="8" fill="#FFD700" stroke="#FFF" stroke-width="1"/>
+          <circle cx="120" cy="150" r="8" fill="#FFD700" stroke="#FFF" stroke-width="1"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="home-footer-text">
+    <p>Accurate Prediction Using Machine Learning</p>
+  </div>
+</div>
+{% endblock %}

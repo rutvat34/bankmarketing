@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Model | Bank Marketing{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <h3>Model Details</h3>
+        <p><strong>Model:</strong> {{ model_name }}</p>
+        <p><strong>Accuracy (test set):</strong> {{ accuracy }}%</p>
+
+        <h5 class="mt-4">How this model works</h5>
+        <p>This application uses a logistic regression model trained on the UCI Bank Marketing dataset. Logistic regression is a linear model that estimates the probability of a binary outcome (subscribe / not subscribe) by applying the logistic function to a weighted sum of input features.</p>
+
+        <h6 class="mt-3">Feature preprocessing</h6>
+        <p>The original dataset contains categorical fields (e.g., job, marital, education, contact, month, poutcome). During training these were encoded as numeric values and numeric features were optionally scaled. The web form expects inputs in the same encoded format used at training time.</p>
+
+        <h6 class="mt-3">Input features</h6>
+        <ul>
+          {% for f in features %}
+            <li>{{ f }}</li>
+          {% endfor %}
+        </ul>
+
+        <h6 class="mt-3">Prediction & probability</h6>
+        <p>The model outputs a class (0 = No, 1 = Yes) and a probability score for the positive class. The app shows both the predicted label and the probability (if supported by the model object).</p>
+
+        <h6 class="mt-3">Notes and next steps</h6>
+        <ul>
+          <li>If you retrain the model, ensure you save the preprocessing pipeline together with the estimator so inputs are encoded the same way.</li>
+          <li>You can extend this page to show hyperparameters, a confusion matrix, ROC curve, or feature importances.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
